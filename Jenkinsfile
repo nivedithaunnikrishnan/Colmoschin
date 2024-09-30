@@ -8,7 +8,7 @@ git 'https://github.com/nivedithaunnikrishnan/Colmoschin'
 }
 stage('Build') {
 steps {
-sh './build.sh' // For Java: mvn clean package
+sh 'mvn clean package' // For Java: mvn clean package
 }
 }
 stage('Test') {
