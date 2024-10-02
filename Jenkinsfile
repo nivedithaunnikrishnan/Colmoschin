@@ -13,7 +13,7 @@ sh 'mvn clean package' // For Java: mvn clean package
 }
 stage('Test') {
 steps {
-sh 'pytest tests/' // For Python
+sh 'mvn test/' // For Python
 }
 }
 stage('Security Scan') {
