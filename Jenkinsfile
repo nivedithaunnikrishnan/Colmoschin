@@ -1,8 +1,6 @@
 pipeline {
 agent any
-       environment {
-        PATH = "/opt/dependency-check/bin/dependency-check.sh"  // Update with your actual path
-    }
+       
 stages {
 stage('Clone') {
 steps {
