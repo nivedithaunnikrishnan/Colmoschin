@@ -16,6 +16,15 @@ steps {
 sh 'mvn test' // For Python
 }
 }
-
+stage('Security Scan') {
+steps {
+sh 'dependency-check --scan ./ --out report'
+}
+}
+  stage('Dependency Check') {
+steps {
+dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+}
+}
 }
 }
