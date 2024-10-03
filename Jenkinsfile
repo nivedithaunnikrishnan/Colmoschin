@@ -17,12 +17,12 @@ steps {
 sh 'mvn test' 
 }
 }
-   
 stage('Security Scan') {
 steps {
-sh 'dependency-check --scan ./ --out report'
+dependencyCheck additionalArguments: '--scan ./'
 }
 }
+   
 
 }
 }
