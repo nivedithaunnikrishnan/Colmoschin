@@ -16,7 +16,11 @@ steps {
 sh 'mvn test' // For Python
 }
 }
-
+stage('Security Scan') {
+steps {
+sh 'dependency-check --scan ./ --out report'
+}
+}
 
 }
 }
