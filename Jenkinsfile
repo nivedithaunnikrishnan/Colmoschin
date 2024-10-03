@@ -20,7 +20,7 @@ sh 'mvn test'
    
 stage('Security Scan') {
 steps {
-sh 'dependency-check.sh --scan ./ --out report'
+sh 'dependency-check --scan ./ --out report'
 }
 }
 
