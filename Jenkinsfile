@@ -16,12 +16,10 @@ steps {
 sh 'mvn test' // For Python
 }
 }
-   environment {
-        PATH = "/opt/dependency-check/bin" 
-    }
+   
 stage('Security Scan') {
 steps {
-sh 'dependency-check --scan ./ --out report'
+sh 'dependency-check.sh --scan ./ --out report'
 }
 }
 
