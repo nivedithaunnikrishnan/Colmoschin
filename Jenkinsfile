@@ -17,11 +17,12 @@ steps {
 sh 'mvn test' 
 }
 }
-stage('Run OWASP ZAP Scan') {
+stage('Provision Infrastructure') {
 steps {
- sh 'ssh abiya@10.0.0.85 "owasp-zap -daemon -port 8080"' 
-
-}
+        script {
+            sh 'vagrant up'
+        }
+    }
 }
 }
 }
