@@ -9,7 +9,7 @@ git 'https://github.com/nivedithaunnikrishnan/Colmoschin.git'
 }
 stage('Build') {
 steps {
-sh "'${MAVEN_HOME}/bin/mvn' clean install"
+sh 'mvn clean install'
 }
 }
 stage('Test') {
