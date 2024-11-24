@@ -9,18 +9,18 @@ git 'https://github.com/nivedithaunnikrishnan/Colmoschin.git'
 }
 stage('Build') {
 steps {
-sh 'mvn clean package'
+bat 'mvn clean package'
 }
 }
 stage('Test') {
 steps {
-sh 'mvn test' 
+bat 'mvn test' 
 }
 }
 stage('Provision Infrastructure') {
 steps {
         script {
-            sh 'vagrant up'
+            bat 'vagrant up'
         }
     }
 }
