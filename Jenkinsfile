@@ -1,8 +1,6 @@
 pipeline {
 agent any
-environment {
-        JAVA_HOME = tool name: 'jdk-21', type: 'JDK'
-    }       
+   
 stages {
 stage('Clone') {
 steps {
