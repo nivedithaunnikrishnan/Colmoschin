@@ -7,16 +7,12 @@ steps {
 git 'https://github.com/nivedithaunnikrishnan/Colmoschin.git'
 }
 }
-stage('Build') {
+stage('Validate Vagrant file') {
 steps {
-bat 'mvn clean package'
+bat 'vagrant validate'
 }
 }
-stage('Test') {
-steps {
-bat 'mvn test' 
-}
-}
+
 stage('Provision Infrastructure') {
 steps {
         script {
@@ -24,5 +20,10 @@ steps {
         }
     }
 }
+   stage('Security Check') {
+      steps {
+         bat 'vagrant ssh db-server -c "sudo lynis audit system"'
+      }
+   }
 }
 }
