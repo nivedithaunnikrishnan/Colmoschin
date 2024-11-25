@@ -5,6 +5,8 @@ Vagrant.configure("2") do |config|
   DB_PASSWORD = "col_moschin@1234!"
   DB_NAME = "col_moschin_db"
   LUKS_PASSPHRASE = "col_moschin@1234!"
+config.ssh.forward_agent = false
+
 
   # Define the Web Server VM
   config.vm.define "web-server" do |web|
