@@ -20,10 +20,11 @@ steps {
         }
     }
 }
-   stage('Security Check') {
-      steps {
-         bat 'vagrant ssh db-server -c "sudo lynis audit system"'
-      }
-   }
+ 
+   stage('Code Analysis') {
+steps {
+sh 'sonar-scanner'
+}
+}
 }
 }
