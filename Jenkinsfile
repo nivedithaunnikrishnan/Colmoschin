@@ -8,7 +8,7 @@ git 'https://github.com/nivedithaunnikrishnan/Colmoschin.git'
 }
 }
 
-   stage('Dependency Check') {
+   stage('OWASP Dependency Check') {
 steps {
        bat "dependency-check.bat --version"
 }
