@@ -11,7 +11,7 @@ git 'https://github.com/nivedithaunnikrishnan/Colmoschin.git'
    stage('OWASP Dependency Check') {
 steps {
                 bat '''
-                    dependency-check.bat --project "MyProject" ^
+                    dependency-check.bat --project "Colmoschin-pipeline" ^
                     --scan . ^
                     --out dependency-check-report ^
                     --format HTML
