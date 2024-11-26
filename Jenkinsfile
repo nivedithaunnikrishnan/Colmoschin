@@ -7,7 +7,13 @@ steps {
 git 'https://github.com/nivedithaunnikrishnan/Colmoschin.git'
 }
 }
-stage('Validate Vagrant file') {
+
+   stage('Dependency Check') {
+steps {
+       bat "dependency-check.bat --version"
+}
+   }
+   stage('Validate Vagrant file') {
 steps {
 bat 'vagrant validate'
 }
@@ -20,10 +26,5 @@ steps {
         }
     }
 }
-   stage('Dependency Check') {
-steps {
-       bat "dependency-check.bat --version"
-}
-   }
 }
 }
