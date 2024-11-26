@@ -23,7 +23,7 @@ steps {
  
    stage('Code Analysis') {
 steps {
-sh 'sonar-scanner'
+bat 'sonar-scanner'
 }
 }
 }
