@@ -20,11 +20,10 @@ steps {
         }
     }
 }
- 
-   stage('Code Analysis') {
+   stage('Dependency Check') {
 steps {
-bat 'sonar-scanner'
+       bat "dependency-check.bat --version"
 }
-}
+   }
 }
 }
