@@ -12,9 +12,9 @@ git 'https://github.com/nivedithaunnikrishnan/Colmoschin.git'
 steps {
                 bat '''
                     dependency-check.bat --project "Colmoschin-pipeline" ^
-                    --scan . ^
-                    --out dependency-check-report ^
-                    --format HTML
+                    --scan C:\ProgramData\Jenkins\.jenkins\workspace\Colmsochin-pipeline  ^
+                        --out C:\ProgramData\Jenkins\.jenkins\workspace\Colmsochin-pipeline ^
+                        --format HTML
                 '''
             
    
