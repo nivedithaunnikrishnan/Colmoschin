@@ -10,13 +10,14 @@ git 'https://github.com/nivedithaunnikrishnan/Colmoschin.git'
 
    stage('OWASP Dependency Check') {
 steps {
+   script {
                 bat '''
                     dependency-check.bat --project "Colmoschin-pipeline" ^
                     --scan C:\ProgramData\Jenkins\.jenkins\workspace\Colmsochin-pipeline  ^
                         --out C:\ProgramData\Jenkins\.jenkins\workspace\Colmsochin-pipeline ^
                         --format HTML
                 '''
-            
+   }
    
 }
    }
